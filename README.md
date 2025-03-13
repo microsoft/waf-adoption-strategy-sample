@@ -8,19 +8,42 @@ Sample Adoption Strategy for Well Architected Framework (WAF) Reliability. Many 
 
 ## Content
 
-- [Document Audience](#document-audience)
-- [Introduction](#introduction)
-- [Scope](#scope)
-- [Strategy Objectives and KPIs](#strategy-objectives-and-kpis)
-- [Key Strategy Principles](#key-strategy-principles)
-- [Current (WAF Adoption) State](#current-waf-adoption-state)
-- [WAF Adoption Solution Options (Target State)](#waf-adoption-solution-options-target-state)
-- [Roles and Responsibilities](#roles-and-responsibilities)
-- [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
-- [Adoption (Transition) Plan (Strategic Initiatives)](#adoption-transition-plan-strategic-initiatives)
-- [Governance](#governance)
-- [Communication Plan](#communication-plan)
-- [Risk Management]()
+- [Adoption Strategy for Well Architected Framework (WAF) Reliability (Sample)](#adoption-strategy-for-well-architected-framework-waf-reliability-sample)
+  - [Metadata](#metadata)
+  - [Content](#content)
+  - [Document Audience](#document-audience)
+  - [Introduction](#introduction)
+  - [Scope](#scope)
+  - [Strategy Objectives and KPIs](#strategy-objectives-and-kpis)
+    - [Parent Organizational or Department Objectives](#parent-organizational-or-department-objectives)
+    - [Objective 1](#objective-1)
+    - [Objective 2](#objective-2)
+  - [Key Strategy Principles](#key-strategy-principles)
+  - [Current (WAF Adoption) State](#current-waf-adoption-state)
+  - [WAF Adoption Solution Options (Target State)](#waf-adoption-solution-options-target-state)
+    - [Application quality Classification and level of WAF recommendation compliance](#application-quality-classification-and-level-of-waf-recommendation-compliance)
+    - [Solution Options](#solution-options)
+      - [1) Azure Advisor](#1-azure-advisor)
+        - [Assumptions and Constraints](#assumptions-and-constraints)
+        - [Solution](#solution)
+      - [2) Azure Policy](#2-azure-policy)
+        - [Solution](#solution-1)
+      - [3) Azure Verified Modules (AVM)](#3-azure-verified-modules-avm)
+        - [Solution](#solution-2)
+      - [4) Documented Guidance and Standard](#4-documented-guidance-and-standard)
+      - [5) Microsoft WAF Reliability Assessment (WARA)](#5-microsoft-waf-reliability-assessment-wara)
+      - [6) DevOps CI/CD Pipeline](#6-devops-cicd-pipeline)
+    - [Solution to lifecycle (SDLC/ALM) mapping](#solution-to-lifecycle-sdlcalm-mapping)
+  - [Roles and Responsibilities](#roles-and-responsibilities)
+    - [Role Descriptions](#role-descriptions)
+  - [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
+    - [Other Strategies and Frameworks](#other-strategies-and-frameworks)
+    - [Strategy Execution Dependencies](#strategy-execution-dependencies)
+  - [Adoption (Transition) Plan (Strategic Initiatives)](#adoption-transition-plan-strategic-initiatives)
+  - [Governance](#governance)
+  - [Communication Plan](#communication-plan)
+  - [Risk Management](#risk-management)
+  - [References](#references)
 
 
 ## Document Audience
@@ -69,7 +92,6 @@ Improve Azure infrastructure and platform service related quality
   - MTBF is reduced by 10% by end of Q4 2025
   - Measured Availability vs. Availability SLOs is improved by 10% by end of Q4 2025
 
-Please also see [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
 
 ### Objective 2
 
@@ -84,9 +106,8 @@ Improving the quality does not negatively impact delivery velocity
 1. **Reuse (external or internal)** - instead of developing be spoke solutions and frameworks
 2. **Automate when possible** - Prefer automation (codifying the process) over writing guidance documents with directions how to implement the WAF best practices
 3. **Deliver in increments** - Leverage Lean/Agile concepts and deliver WAF adoption solutions in small increments (e.g. 2-3 weeks), with each increment providing the value
-4. **Advise instead of enforce** - Purpose of this strategy is develop advised solution to help teams achieve their quality metrics (1) rather than enforce proposed WAF Adoption solutions in any way.
+4. **Advise instead of enforce** - Purpose of this strategy is develop advised solution to help teams achieve their quality metrics rather than enforce proposed WAF Adoption solutions in any way.
 
-(1) Teams/Applications should be measured by software delivery Quality and Delivery Velocity metrics. Definition of such metrics is out of scope of this strategy.
 
 ## Current (WAF Adoption) State
 
@@ -99,7 +120,7 @@ Following are the proposed solutions and tools to be leveraged for the WAF Adopt
 
 | Solution                                                                        | % of WAF practices coverage                                                                              |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| Azure Advisor                                                                   | approx 30%                                                                                               |
+| [Azure Advisor](#1-azure-advisor)                                                                   | approx 30%                                                                                               |
 | [Azure Policy](#azure-policy-)                                                  | potential to reach approx. 70% (with custom Policies included)                                           |
 | [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | approx 30% (currently), target will be approx 70% - not all recommendations from the WAF can be codified |
 | Microsoft WAF Reliability Assessment (WARA)                                     | approx 99%                                                                                               |
@@ -263,10 +284,6 @@ Microsoft WAF Reliability Assessment (WARA) can be delivered by Microsoft at any
 [How the strategy will be communicated to stakeholders.]
 
 ## Risk Management
-
-## Further Improvements
-
-- Propose and agree Group's ownership of the WAF Adoption strategy framework
 
 ## References
 

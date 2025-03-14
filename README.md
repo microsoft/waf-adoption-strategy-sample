@@ -1,52 +1,25 @@
 # Adoption Strategy for Well Architected Framework (WAF) Reliability (Sample)
 
-Sample Adoption Strategy for Well Architected Framework (WAF) Reliability. Many defintions require further development like for example definition of roles and responsibilities and it is highly dependant on actual organizational structure.
+Sample Adoption Strategy for Well Architected Framework (WAF) Reliability Pillar.  
 
-## Metadata
+## Document Properties
 
 - Version: 0.5
 
 ## Content
 
-- [Adoption Strategy for Well Architected Framework (WAF) Reliability (Sample)](#adoption-strategy-for-well-architected-framework-waf-reliability-sample)
-  - [Metadata](#metadata)
-  - [Content](#content)
-  - [Document Audience](#document-audience)
-  - [Introduction](#introduction)
-  - [Scope](#scope)
-  - [Strategy Objectives and KPIs](#strategy-objectives-and-kpis)
-    - [Parent Organizational or Department Objectives](#parent-organizational-or-department-objectives)
-    - [Objective 1](#objective-1)
-    - [Objective 2](#objective-2)
-  - [Key Strategy Principles](#key-strategy-principles)
-  - [Current (WAF Adoption) State](#current-waf-adoption-state)
-  - [WAF Adoption Solution Options (Target State)](#waf-adoption-solution-options-target-state)
-    - [Application quality Classification and level of WAF recommendation compliance](#application-quality-classification-and-level-of-waf-recommendation-compliance)
-    - [Solution Options](#solution-options)
-      - [1) Azure Advisor](#1-azure-advisor)
-        - [Assumptions and Constraints](#assumptions-and-constraints)
-        - [Solution](#solution)
-      - [2) Azure Policy](#2-azure-policy)
-        - [Solution](#solution-1)
-      - [3) Azure Verified Modules (AVM)](#3-azure-verified-modules-avm)
-        - [Solution](#solution-2)
-      - [4) Documented Guidance and Standard](#4-documented-guidance-and-standard)
-      - [5) Microsoft WAF Reliability Assessment (WARA)](#5-microsoft-waf-reliability-assessment-wara)
-      - [6) DevOps CI/CD Pipeline](#6-devops-cicd-pipeline)
-    - [Solution to lifecycle (SDLC/ALM) mapping](#solution-to-lifecycle-sdlcalm-mapping)
-  - [Roles and Responsibilities](#roles-and-responsibilities)
-    - [Role Descriptions](#role-descriptions)
-  - [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
-    - [Other Strategies and Frameworks](#other-strategies-and-frameworks)
-    - [Strategy Execution Dependencies](#strategy-execution-dependencies)
-  - [Adoption (Transition) Plan (Strategic Initiatives)](#adoption-transition-plan-strategic-initiatives)
-  - [Governance](#governance)
-  - [Communication Plan](#communication-plan)
-  - [Risk Management](#risk-management)
-  - [References](#references)
+- [Document Audience](#document-audience)
+- [Introduction](#introduction)
+- [Scope](#scope)
+- [Strategy Objectives and KPIs](#strategy-objectives-and-kpis)
+- [Key Strategy Principles](#key-strategy-principles)
+- [Current (WAF Adoption) State](#current-waf-adoption-state)
+- [WAF Adoption Solution Options (Target State)](#waf-adoption-solution-options-target-state)
+- [Roles and Responsibilities](#roles-and-responsibilities)
+- [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
+- [Adoption (Transition) Plan (Strategic Initiatives)](#adoption-transition-plan-strategic-initiatives)
 
-
-## Document Audience
+## Audience
 
 
 | Audience                               | Role                                                                                           |
@@ -71,14 +44,19 @@ This document serves as a guide for the WAF Adoption Strategy team and Departmen
 The strategy includes detailed plans for leveraging Azure Advisor, Azure Policy Compliance, and other tools to achieve our objectives. It also outlines key adoption principles, roles and responsibilities, and a phased transition plan to ensure a smooth and effective implementation.
 By adopting the Azure Well Architected Framework, we aim to enhance our cloud infrastructure's resilience, security, and efficiency, ultimately delivering better value to our stakeholders.
 
+## Taxonomy
+
+- Service: Application of Platform Service
+
 ## Scope
 
-- WAF - Reliability, initial scope with intent to expand to other WAF pillars in later adoption phases 
-- Azure Cloud usage within a department / business unit, with aim to propose reuse of the department efforts within other BUs or on the Global level.
-- Azure Infrastructure and Platform services, the Azure WAF framework is applicable to Application design a well, but it is not current focus of the adoption strategy.
+- Azure WAF - Reliability, initial scope with intent to expand to other WAF pillars. 
+- Azure Cloud adoption 
+- Azure Infrastructure and Platform services. Application Services to be covered at later stages.
+- "Mission Critical" Service Quality Level (please see [System Quality Level Classification and WAF compliance level](#system-quality-level-classification-and-waf-compliance-level) ).
 
 
-## Strategy Objectives and KPIs
+## Strategy Objectives (and Key Results)
 
 ### Parent Organizational or Department Objectives
 
@@ -86,7 +64,7 @@ TBD
 
 ### Objective 1
 
-Improve Azure infrastructure and platform service related quality
+Improve Azure infrastructure and platform service quality
 
 - Key Results
   - MTBF is reduced by 10% by end of Q4 2025
@@ -112,15 +90,15 @@ Improving the quality does not negatively impact delivery velocity
 ## Current (WAF Adoption) State
 
 Application and Infrastructure teams are available of Azure WAF but there is no structured approach for the consistent and measurable adoption.
-Some sporadic Microsoft (WARA) - Well Architected Framework Reliability Assessments were delivered in the organization. 
+Some Microsoft [(WARA) - Well Architected Framework Reliability Assessments](#5-microsoft-waf-reliability-assessment-wara) were delivered in the organization. 
 
-## WAF Adoption Solution Options (Target State)
+## Solutions (Target State)
 
 Following are the proposed solutions and tools to be leveraged for the WAF Adoption:
 
 | Solution                                                                        | % of WAF practices coverage                                                                              |
 | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Azure Advisor](#1-azure-advisor)                                                                   | approx 30%                                                                                               |
+| [Azure Advisor](#1-azure-advisor)                                               | approx 30%                                                                                               |
 | [Azure Policy](#azure-policy-)                                                  | potential to reach approx. 70% (with custom Policies included)                                           |
 | [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | approx 30% (currently), target will be approx 70% - not all recommendations from the WAF can be codified |
 | Microsoft WAF Reliability Assessment (WARA)                                     | approx 99%                                                                                               |
@@ -128,13 +106,13 @@ Following are the proposed solutions and tools to be leveraged for the WAF Adopt
 | DevOps (CI/CD) pipelines                                                        | to cover any remaining gaps not covered by automation                                                    |
 
 
-### Application quality Classification and level of WAF recommendation compliance
+### System Quality Level Classification and WAF compliance level
 
-Different applications require varying levels of quality. The Microsoft WAF frameworks recommend classifying applications and mapping best practices to each application class. Not all recommendations are applicable to every application class.
+Different services require varying levels of quality. The Microsoft WAF frameworks recommend classifying systems and mapping best practices to each application class. Not all recommendations are applicable to every application class.
 For example, application classes could include: Mission Critical, Business Critical, and Supporting. A Mission Critical application might require all recommendations to be applied, while a Supporting application may only need a smaller subset.
 Therefore, it is important to apply WAF adoption solutions with application classification in mind to avoid creating unrealistic quality expectations for less critical applications.
 
-Please see following articles for more detailed information about Application quality or criticality classification:
+Please see following articles for more detailed information about system quality classification:
 - [Azure Well Architected Framework - Assign a criticality rating to each flow](https://learn.microsoft.com/azure/well-architected/reliability/identify-flows#assign-a-criticality-rating-to-each-flow)
 - [Azure Cloud Adoption Framework - Criticality scale](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/manage/considerations/criticality#criticality-scale)
 
@@ -142,23 +120,18 @@ Please see following articles for more detailed information about Application qu
 
 #### 1) Azure Advisor
 
-Azure Advisor for reliability is a feature within Azure Advisor that provides recommendations to help you improve the reliability of your Azure resources.
+[Azure Advisor for reliability](https://urldobd.org) is a feature within Azure Advisor that provides recommendations to help you improve the reliability of your Azure resources.
 Reliability in this context refers to the ability of a system to recover from failures and continue to function.
 Azure Advisor analyzes your resource configurations and usage telemetry and then provides best practices and recommendations to enhance the reliability of your applications and services.
 
-> [!NOTE]
-> Application quality class consideration - Advisor recommendation would need to be mapped in some way to the application quality class. Detailed solution design is out of scope of this strategy document.
-
-
 ##### Assumptions and Constraints
 - Only subset of WAF recommendations is covered with current Azure Advisor (Portal) capability (i.e. 30%?), therefore Advisor alone would not be sufficient to provide high level of WAF best practices coverage.
-- Certain WAF recommendations will never be available within the Azure Advisor given that some of these recommendations are design and process recommendation, therefore not suitable for tool based assessment of deployed Azure resources.
+- Certain WAF recommendations will never be available within the Azure Advisor given that some of the recommendations are design and process recommendation, therefore not suitable for tool based assessment of deployed Azure resources.
 
 ##### Solution 
 
-- Azure Advisor should be integrated in CI/CD pipeline
-  - Ideally, to be implemented as a quality gate for the application which fails in case Advisor % of recommendations are not met
-  - Quality gate approval should be implemented (accept or reject the Advisor gate)
+- Azure Advisor should be integrated within Service design and delivery lifecycle.
+  - Ideally, to be implemented as a CI/CD quality gate for the service which fails in case Advisor % of recommendations are not met
   - Application should not be deployed to production without achieving expected percentage of compliance
 
 This quality gate could be implemented as a Task in the pipeline or as a manual validation expected from the team.
@@ -167,37 +140,31 @@ This quality gate could be implemented as a Task in the pipeline or as a manual 
 
 #### 2) Azure Policy
 
-Azure Policy is a service in Azure that enables you to create, assign, and manage policies to enforce organizational standards and assess compliance at scale.
-These policies help ensure that your resources are compliant with your corporate standards and service level agreements (SLAs).
+[Azure Policy](https://urltbd.org) is an Azure service that provides creation, assigning and managing of policies to enforce organizational standards and assess compliance at scale.
 
 There is number of our of box polices aimed to check reliability related configuration of Azure Services. Custom Policies can be also written with the same goal.
-It would be recommended to close WAF best practices gaps not covered by Azure Advisor by deploying our of box Azure Policies covering WAF Reliability best practices and to consider writing custom Policies in case other defined WAF adoption Solutions are not adequate.
-
-
-> [!NOTE]
-> Application quality class consideration - Advisor recommendation would need to be mapped in some way to the application quality class. Detailed solution design is out of scope of this strategy document.
+The WAF recommendations which are not covered by Azure Advisor could be covered by deploying out of box Azure Policies covering WAF Reliability recommendations. Consider writing custom Policies in case other proposed Azure WAF adoption Solutions are not applicable.
 
 ##### Solution 
 
-- WAF related policies are using Audit effect (not preventing deployment of resources)
+- Azure WAF related policies are using Audit effect (not preventing deployment of resources)
 - Deployed Azure resources are evaluated by the Policy and Policy compliance report is generated
 - CI/CD pipeline uses Policy compliance (e.g. over subscription if subscription is scoped to the Application) as a quality check and gate
 - One of the approaches for mapping the Application Class with a WAF Quality Class and associated Policies is use of Azure Management Groups or Tags to group/tag Application resources to a corresponding class.
-  - Example: Mission Critical app is deployed to "Mission Critical" Management Group which has "WAF Mission Critical" Policy Initiative assigned. 
+  - Example: Mission Critical app is deployed to "Mission Critical" Management Group (or subscription with such Tag) which has "WAF Mission Critical" Policy Initiative assigned.
 
 #### 3) Azure Verified Modules (AVM)
 
-Azure Verified Modules (AVM) are pre-built, reusable infrastructure as code (IaC) modules that have been verified by Microsoft to meet best practices for security, reliability, and operational excellence.
+[Azure Verified Modules (AVM)](http://urltbd.org) are pre-built, reusable infrastructure as code (IaC) modules that have been verified by Microsoft to meet best practices for security, reliability, and operational excellence.
 These modules are designed to simplify the deployment and management of Azure resources by providing standardized, tested, and validated templates that can be easily integrated into your infrastructure.
 
 ##### Solution 
 
-- Use AVMs to deploy Azure Resources and apply adequate WAF Reliability configuration
-- Organization or Department specific WAF configuration may be required to implement [Quality Classification Mapping](#application-quality-classification-and-level-of-waf-recommendation-compliance) 
+- Use AVMs to deploy Azure Resources and apply WAF Reliability configuration 
 
-#### 4) Documented Guidance and Standard
+#### 4) Documented Guidance and Standards
 
-Document any WAF best practices not covered by other "automated" solutions as a Guidance or Internal Standard.
+Document any WAF best practices not covered by other "automated" solutions as a Guidance or Internal Standard document.
 
 #### 5) Microsoft WAF Reliability Assessment (WARA)
 
@@ -206,7 +173,7 @@ It involves a detailed assessment of the current state of the organization's clo
 The VBD typically includes interactive sessions with key stakeholders to discuss findings, prioritize recommendations, and develop a roadmap for implementing reliability enhancements.
 The goal is to ensure that the organization's cloud solutions are resilient, reliable, and aligned with industry standards.
 
-It would be recommended that WARA is conducted occasionally on few selected applications as a third-party conducted quality check. The WARA is not meant to be conducted for every application in the application portfolio. 
+It would be recommended that WARA is conducted occasionally for a few selected applications as a third-party conducted quality check. The WARA is not meant to be conducted for every application in the application portfolio. 
 
 #### 6) DevOps CI/CD Pipeline
 
@@ -223,9 +190,7 @@ Alternative could be use of Agile definition of done or pull request rules to de
 | Azure Verified Modules                      | x      | x        |                       |
 | Microsoft WAF Reliability Assessment (WARA) |        |          | x                     |
 | Documented Standards                        | x      |          |                       |
-| DevOps CI/CD Pipelines (2)                  |        | x        | x                     |
-
-(2) CI/CD Pipeline's role would be to codify the process and act as an overall orchestrator of the multiple WAF adoption solutions. WAF may be simply a manual quality gate (check) in the pipeline.
+| DevOps CI/CD Pipelines                      |        | x        | x                     |
 
 
 ## Roles and Responsibilities
@@ -254,6 +219,7 @@ Proposed model for design and delivery of WAF Adoption strategy is "Inner-sourci
 
 - System (Quality) Classification Framework; Organization or department system classification definitions (framework) which can be used to map level of WAF best practices required per each class/category (1). 
 - System and Software delivery (quality and velocity) metrics; Organization global or department (BU) level definition of system and software delivery performance metrics (1).
+
 
 (1) If such definition/framework doesn't exist, it would be recommended to define it (it is out of scope for this Strategy)
 

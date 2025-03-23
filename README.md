@@ -44,47 +44,44 @@ This document serves as a guide for the WAF Adoption Strategy team and Departmen
 The strategy includes detailed plans for leveraging Azure Advisor, Azure Policy Compliance, and other tools to achieve our objectives. It also outlines key adoption principles, roles and responsibilities, and a phased transition plan to ensure a smooth and effective implementation.
 By adopting the Azure Well Architected Framework, we aim to enhance our cloud infrastructure's resilience, security, and efficiency, ultimately delivering better value to our stakeholders.
 
-## Taxonomy
-
-- Service: Application of Platform Service
 
 ## Scope
 
-- Azure WAF - Reliability, initial scope with intent to expand to other WAF pillars. 
-- Azure Cloud adoption 
-- Azure Infrastructure and Platform services. Application Services to be covered at later stages.
-- "Mission Critical" Service Quality Level (please see [System Quality Level Classification and WAF compliance level](#system-quality-level-classification-and-waf-compliance-level) ).
+The Azure WAF Adoption strategy incudes the following scope:
+
+| Concern                                                                                | Scope                                    |
+| -------------------------------------------------------------------------------------- | ---------------------------------------- |
+| Azure WAF Pillars                                                                      | Reliability                              |
+| Environment                                                                            | Azure Cloud                              |
+| Service Types                                                                          | Infrastructure Service, Platform Service |
+| [Service Quality Class](#system-quality-level-classification-and-waf-compliance-level) | Mission Critical                         |
 
 
-## Strategy Objectives (and Key Results)
+## Objectives
 
 ### Parent Organizational or Department Objectives
 
 TBD
 
-### Objective 1
-
-Improve Azure infrastructure and platform service quality
+### Objective - Improve Azure infrastructure and platform service quality
 
 - Key Results
   - MTBF is reduced by 10% by end of Q4 2025
   - Measured Availability vs. Availability SLOs is improved by 10% by end of Q4 2025
 
-
-### Objective 2
-
-Improving the quality does not negatively impact delivery velocity
+### Objective - Improve the quality without negatively impacting a delivery velocity
 
 - Key Results
   -  Code commit to production duration is not increased for more than 10% as result of meeting Objective 1 (by end of Q4 2025)
   -  Number of releases is not decreased for more than 10% as result of meeting Objective 1 (by end of Q4 2025)
 
-## Key Strategy Principles
+## Key Principles
 
 1. **Reuse (external or internal)** - instead of developing be spoke solutions and frameworks
 2. **Automate when possible** - Prefer automation (codifying the process) over writing guidance documents with directions how to implement the WAF best practices
-3. **Deliver in increments** - Leverage Lean/Agile concepts and deliver WAF adoption solutions in small increments (e.g. 2-3 weeks), with each increment providing the value
-4. **Advise instead of enforce** - Purpose of this strategy is develop advised solution to help teams achieve their quality metrics rather than enforce proposed WAF Adoption solutions in any way.
+3. **Make it repeatable** - instead of once of (bespoke) approach for every solution / application
+4. **Deliver in increments** - Leverage Lean/Agile concepts and deliver WAF adoption solutions in small increments (e.g. 2-3 weeks), with each increment providing the value
+5. **Advise instead of enforce** - Purpose of this strategy is develop advised solution to help teams achieve their quality metrics rather than enforce proposed WAF Adoption solutions in any way.
 
 
 ## Current (WAF Adoption) State
@@ -94,17 +91,18 @@ Some Microsoft [(WARA) - Well Architected Framework Reliability Assessments](#5-
 
 ## Solutions (Target State)
 
-Following are the proposed solutions and tools to be leveraged for the WAF Adoption:
+Following are the proposed DevOps / Continuous Delivery practices, processes and tools to be used to adopt Azure WAF
 
-| Solution                                                                        | % of WAF practices coverage                                                                              |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [Azure Advisor](#1-azure-advisor)                                               | approx 30%                                                                                               |
-| [Azure Policy](#azure-policy-)                                                  | potential to reach approx. 70% (with custom Policies included)                                           |
-| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | approx 30% (currently), target will be approx 70% - not all recommendations from the WAF can be codified |
-| Microsoft WAF Reliability Assessment (WARA)                                     | approx 99%                                                                                               |
-| Documented Standards and Guidelines                                             | to cover any remaining gaps not covered by automation                                                    |
-| DevOps (CI/CD) pipelines                                                        | to cover any remaining gaps not covered by automation                                                    |
+| Name                                                                            | Type     | % of WAF practices coverage                                                                              | Complexity      | Impact |
+| ------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------- | --------------- | ------ |
+| [Azure Advisor](#1-azure-advisor)                                               | Practice | approx 30%                                                                                               | Low             | High   |
+| [Azure Policy](#azure-policy-)                                                  | Practice | potential to reach approx. 70% (with custom Policies included)                                           | Medium          | High   |
+| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | Practice | approx 30% (currently), target will be approx 70% - not all recommendations from the WAF can be codified | Medium-High (1) | High   |
+| Microsoft WAF Reliability Assessment (WARA)                                     | Service  | approx 99%                                                                                               | Medium          | Medium |
+| Documented Standards and Guidelines                                             | Guidance | to cover any remaining gaps not covered by automation                                                    | High            | Medium |
+| DevOps (CI/CD) pipelines                                                        | Practice | to cover any remaining gaps not covered by automation                                                    | Low             | High   |
 
+(1) High in case custom modules or enhancements of incomplete modules is required
 
 ### System Quality Level Classification and WAF compliance level
 
@@ -116,7 +114,7 @@ Please see following articles for more detailed information about system quality
 - [Azure Well Architected Framework - Assign a criticality rating to each flow](https://learn.microsoft.com/azure/well-architected/reliability/identify-flows#assign-a-criticality-rating-to-each-flow)
 - [Azure Cloud Adoption Framework - Criticality scale](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/manage/considerations/criticality#criticality-scale)
 
-### Solution Options
+### Practices, Processes and Tools
 
 #### 1) Azure Advisor
 
@@ -250,6 +248,10 @@ Microsoft WAF Reliability Assessment (WARA) can be delivered by Microsoft at any
 [How the strategy will be communicated to stakeholders.]
 
 ## Risk Management
+
+## Taxonomy
+
+- Service: Application of Platform Service
 
 ## References
 

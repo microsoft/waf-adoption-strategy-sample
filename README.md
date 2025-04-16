@@ -19,6 +19,19 @@ Sample Adoption Strategy for Well Architected Framework (WAF) Reliability Pillar
 - [Strategy and Delivery Dependencies](#strategy-and-delivery-dependencies)
 - [Adoption (Transition) Plan (Strategic Initiatives)](#adoption-transition-plan-strategic-initiatives)
 
+## Executive Summary
+
+The Azure Well-Architected Framework (WAF) Adoption Strategy for Reliability Pillar, focuses on embedding best practices for reliability into cloud solutions. The strategy's core principle is to prioritize "codified" guidance leveraging code and automation—over written guidance documents. This ensures that best practices are actionable, repeatable, and scalable.
+
+Key principles include:
+
+- Automation over documentation: Codify WAF best practices into tools like Azure Advisor, Azure Policy, and Azure Verified Modules (AVM).
+- Repeatability: Use reusable, automated solutions instead of bespoke approaches.
+- Incremental delivery: Implement WAF adoption in small, iterative steps.
+- Advisory approach: Provide guidance to teams rather than enforcing compliance.
+
+The strategy integrates WAF principles into CI/CD pipelines, Azure tools, and DevOps practices, enabling teams to improve service quality without compromising delivery speed. By adopting this approach, the organization ensures consistent, measurable improvements in cloud infrastructure resilience, security, and efficiency.
+
 ## Audience
 
 
@@ -173,6 +186,12 @@ The goal is to ensure that the organization's cloud solutions are resilient, rel
 
 It would be recommended that WARA is conducted occasionally for a few selected applications as a third-party conducted quality check. The WARA is not meant to be conducted for every application in the application portfolio. 
 
+#### 6) Azure Proactive Resiliency Library
+
+The [Azure Proactive Resiliency Library](https://azure.github.io/Azure-Proactive-Resiliency-Library-v2/welcome/) is a resource designed to help organizations improve the resiliency of their Azure cloud solutions. It provides a collection of best practices, tools, and guidance to proactively identify and mitigate potential risks to system reliability. The library focuses on ensuring that Azure workloads are resilient, recoverable, and aligned with industry standards for reliability.
+The library contains scripts capable assessing compliance of deployed with WAF Reliability [service guides](https://learn.microsoft.com/azure/well-architected/service-guides/?product=popular) which can be integrated into quality automation set of actions within Application / Infrastructure delivery lifecycle (e.g. within CI/CD pipeline)  
+
+
 #### 6) DevOps CI/CD Pipeline
 
 CI/CD Pipeline's role would be to codify the process and act as an overall orchestrator of the multiple WAF adoption solutions. WAF may be simply a manual quality gate (check) in the pipeline.
@@ -187,8 +206,10 @@ Alternative could be use of Agile definition of done or pull request rules to de
 | Azure Policy                                |        | x        |                       |
 | Azure Verified Modules                      | x      | x        |                       |
 | Microsoft WAF Reliability Assessment (WARA) |        |          | x                     |
+| Azure Proactive Resiliency Library          |        | x        | x                     |
 | Documented Standards                        | x      |          |                       |
 | DevOps CI/CD Pipelines                      |        | x        | x                     |
+
 
 
 ## Roles and Responsibilities

@@ -106,14 +106,16 @@ Some Microsoft [(WARA) - Well Architected Framework Reliability Assessments](#5-
 
 Following are the proposed DevOps / Continuous Delivery practices, processes and tools to be used to adopt Azure WAF
 
-| Name                                                                            | Type     | % of WAF practices coverage                                                                              | Complexity      | Impact |
-| ------------------------------------------------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------- | --------------- | ------ |
-| [Azure Advisor](#1-azure-advisor)                                               | Practice | approx 30%                                                                                               | Low             | High   |
-| [Azure Policy](#azure-policy-)                                                  | Practice | potential to reach approx. 70% (with custom Policies included)                                           | Medium          | High   |
-| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | Practice | approx 30% (currently), target will be approx 70% - not all recommendations from the WAF can be codified | Medium-High (1) | High   |
-| Microsoft WAF Reliability Assessment (WARA)                                     | Service  | approx 99%                                                                                               | Medium          | Medium |
-| Documented Standards and Guidelines                                             | Guidance | to cover any remaining gaps not covered by automation                                                    | High            | Medium |
-| DevOps (CI/CD) pipelines                                                        | Practice | to cover any remaining gaps not covered by automation                                                    | Low             | High   |
+| Name                                                                            | Type     | WAF practices coverage                        | Complexity      | Impact |
+| ------------------------------------------------------------------------------- | -------- | --------------------------------------------- | --------------- | ------ |
+| [Azure Advisor](#1-azure-advisor)                                               | Practice | Low                                           | Low             | High   |
+| [Azure Policy](#azure-policy-)                                                  | Practice | Medium (or High with custom Policies)         | Medium          | High   |
+| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | Practice | Low (currently, work in progress)             | Medium-High (1) | High   |
+| Microsoft WAF Reliability Assessment (WARA)                                     | Service  | High                                          | Medium          | Medium |
+| Azure Proactive Resiliency Library                                              | Practice | Medium                                        | High            | Medium |
+| Documented Standards and Guidelines                                             | Guidance | High (to cover gaps not covered by automation | High            | Medium |
+| DevOps (CI/CD) pipelines                                                        | Practice | n/a                                           | Low             | High   |
+
 
 (1) High in case custom modules or enhancements of incomplete modules is required
 

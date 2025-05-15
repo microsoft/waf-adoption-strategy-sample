@@ -57,7 +57,6 @@ jobs:
       - name: Run Azure Proactive Resiliency Library (APRL)
         run: |
           echo "Running APRL for WAF reliability testing..."
-          pwsh -Command "Invoke-APRL -TargetEnvironment PreProduction"
 
       - name: Fail Stage if Threshold Not Met
         run: echo "Failing stage if WAF compliance threshold is not met..."

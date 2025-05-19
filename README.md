@@ -2,9 +2,6 @@
 
 Sample Adoption Strategy for Well Architected Framework (WAF) Reliability Pillar.  
 
-## Document Properties
-
-- Version: 0.5
 
 ## Content
 
@@ -97,24 +94,28 @@ TBD
 5. **Advise instead of enforce** - Purpose of this strategy is develop advised solution to help teams achieve their quality metrics rather than enforce proposed WAF Adoption solutions in any way.
 
 
-## Current (WAF Adoption) State
+## Current State (WAF Adoption) 
 
 Application and Infrastructure teams are available of Azure WAF but there is no structured approach for the consistent and measurable adoption.
 Some Microsoft [(WARA) - Well Architected Framework Reliability Assessments](#5-microsoft-waf-reliability-assessment-wara) were delivered in the organization. 
 
-## Solutions (Target State)
+## Target State Solution 
+
+There are multiple solutions that could be used to align implemented service with the WAF Reliability recommendations. 
+
+### Summary of Delivery Practices
 
 Following are the proposed DevOps / Continuous Delivery practices, processes and tools to be used to adopt Azure WAF
 
-| Name                                                                            | Type     | WAF practices coverage                        | Complexity      | Impact |
-| ------------------------------------------------------------------------------- | -------- | --------------------------------------------- | --------------- | ------ |
-| [Azure Advisor](#1-azure-advisor)                                               | Practice | Low                                           | Low             | High   |
-| [Azure Policy](#azure-policy-)                                                  | Practice | Medium (or High with custom Policies)         | Medium          | High   |
-| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/) | Practice | Low (currently, work in progress)             | Medium-High (1) | High   |
-| Microsoft WAF Reliability Assessment (WARA)                                     | Service  | High                                          | Medium          | Medium |
-| Azure Proactive Resiliency Library                                              | Practice | Medium                                        | High            | Medium |
-| Documented Standards and Guidelines                                             | Guidance | High (to cover gaps not covered by automation | High            | Medium |
-| DevOps (CI/CD) pipelines                                                        | Practice | n/a                                           | Low             | High   |
+| Name                                                                                | Type     | WAF recommendations coverage                  | Complexity      | Impact |
+| ----------------------------------------------------------------------------------- | -------- | --------------------------------------------- | --------------- | ------ |
+| Automated Acceptance Testing Quality Gate (with Azure Proactive Resiliency Library) | Practice | Medium                                        | High            | Medium |
+| Manual Acceptance Quality Testing Quality Gate                                      | Practice | Low                                           | Low             | High   |
+| [Azure Policy](#azure-policy-)                                                      | Practice | Medium (or High with custom Policies)         | Medium          | High   |
+| [Azure Verified Modules (AVM)](https://azure.github.io/Azure-Verified-Modules/)     | Practice | Low (currently, work in progress)             | Medium-High (1) | High   |
+| Microsoft WAF Reliability Assessment (WARA)                                         | Service  | High                                          | Medium          | Medium |
+| Documented Standards and Guidelines                                                 | Guidance | High (to cover gaps not covered by automation | High            | Medium |
+| DevOps (CI/CD) pipelines                                                            | Practice | n/a                                           | Low             | High   |
 
 
 (1) High in case custom modules or enhancements of incomplete modules is required
@@ -129,7 +130,7 @@ Please see following articles for more detailed information about system quality
 - [Azure Well Architected Framework - Assign a criticality rating to each flow](https://learn.microsoft.com/azure/well-architected/reliability/identify-flows#assign-a-criticality-rating-to-each-flow)
 - [Azure Cloud Adoption Framework - Criticality scale](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/manage/considerations/criticality#criticality-scale)
 
-### Practices, Processes and Tools
+### Practices Overview
 
 #### 1) Azure Advisor
 

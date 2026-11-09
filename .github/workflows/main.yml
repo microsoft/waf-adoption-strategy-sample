@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Code Compile
         run: echo "Compiling code..."
@@ -32,7 +32,7 @@ jobs:
     needs: commit
     steps:
       - name: Checkout code
-        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Run Integration Tests
         run: echo "Running integration tests..."
@@ -49,7 +49,7 @@ jobs:
     needs: aat
     steps:
       - name: Checkout code
-        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Deploy to Pre-Production Environment
         run: echo "Deploying to pre-production environment..."
@@ -67,7 +67,7 @@ jobs:
     needs: pre_production
     steps:
       - name: Checkout code
-        uses: actions/checkout@a37ce9120846195fa4ece8f58b268e6043cb2f26 # v3.7.0
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Deploy to Production Environment
         run: echo "Deploying to production environment..."
